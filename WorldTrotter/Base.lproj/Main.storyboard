@@ -31,6 +31,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="farenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YJD-6I-Elr"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="6e7-gb-BFW"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Farenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-hR-gt7">
@@ -61,16 +62,26 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DPY-2H-Smy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lqe-zL-oTc"/>
                             <constraint firstItem="DPY-2H-Smy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ac7-r8-as2"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q68-44-ajm" appends="YES" id="kxu-SV-1Dl"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="celsiusLabel" destination="ZQn-E3-VEL" id="xEO-ko-Adb"/>
+                        <outlet property="textField" destination="qNg-Qe-uMU" id="OCd-F5-Xo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q68-44-ajm">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="6jN-wl-81t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
