@@ -103,13 +103,13 @@
 		581E1DDE1ED0932C000F6B19 /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
-				581E1DDF1ED0932C000F6B19 /* AppDelegate.swift */,
+				581E1E0D1ED09D42000F6B19 /* ConversionViewController.swift */,
 				58EDEC141ED4850200A80075 /* MapViewController.swift */,
 				581E1DE31ED0932C000F6B19 /* Main.storyboard */,
 				581E1DE61ED0932C000F6B19 /* Assets.xcassets */,
 				581E1DE81ED0932C000F6B19 /* LaunchScreen.storyboard */,
 				581E1DEB1ED0932C000F6B19 /* Info.plist */,
-				581E1E0D1ED09D42000F6B19 /* ConversionViewController.swift */,
+				581E1DDF1ED0932C000F6B19 /* AppDelegate.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";

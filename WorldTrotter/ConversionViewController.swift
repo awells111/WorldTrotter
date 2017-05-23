@@ -28,26 +28,26 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         updateCelsiusLabel()
     }
     
-    var farenheitValue: Measurement<UnitTemperature>? {
+    var fahrenheitValue: Measurement<UnitTemperature>? {
         didSet {
             updateCelsiusLabel()
         }
     }
     
     var celsiusValue: Measurement<UnitTemperature>? {
-        if let farenheitValue = farenheitValue {
-            return farenheitValue.converted(to: .celsius)
+        if let fahrenheitValue = fahrenheitValue {
+            return fahrenheitValue.converted(to: .celsius)
         } else {
             return nil
         }
     }
     
-    @IBAction func farenheitFieldEditingChanged(_ textField: UITextField) {
+    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
         
         if let text = textField.text, let value = Double(text) {
-            farenheitValue = Measurement(value: value, unit: .fahrenheit)
+            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
         } else {
-            farenheitValue = nil
+            fahrenheitValue = nil
         }
         
     }
