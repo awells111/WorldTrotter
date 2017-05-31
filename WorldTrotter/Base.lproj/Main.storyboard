@@ -25,12 +25,15 @@
                                 <rect key="frame" x="34.5" y="28" width="305.5" height="297"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNg-Qe-uMU">
-                                        <rect key="frame" x="70.5" y="0.0" width="165" height="84"/>
+                                        <rect key="frame" x="28" y="0.0" width="250" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="EM1-JV-Sl1"/>
+                                        </constraints>
                                         <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                         <connections>
-                                            <action selector="farenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YJD-6I-Elr"/>
+                                            <action selector="fahrenheitFieldEditingChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="8WH-W2-zsx"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="6e7-gb-BFW"/>
                                         </connections>
                                     </textField>
@@ -94,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KX-WU-7m1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656.8" y="35.532233883058474"/>
+            <point key="canvasLocation" x="210" y="869"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7o2-6R-scj">
@@ -113,7 +116,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZe-eH-g4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717.60000000000002" y="35.532233883058474"/>
+            <point key="canvasLocation" x="-641" y="869"/>
         </scene>
     </scenes>
     <resources>

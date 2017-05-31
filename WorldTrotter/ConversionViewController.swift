@@ -12,21 +12,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var celsiusLabel: UILabel!
     @IBOutlet var textField: UITextField!
-    let numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.numberStyle = .decimal
-        nf.minimumFractionDigits = 0
-        nf.maximumFractionDigits = 1
-        return nf
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print("ConversionViewController loaded its view.")
-        
-        updateCelsiusLabel()
-    }
     
     var fahrenheitValue: Measurement<UnitTemperature>? {
         didSet {
@@ -42,17 +27,23 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
+    var numberFormatter: NumberFormatter  = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        nf.minimumFractionDigits = 0
+        nf.maximumFractionDigits = 1
+        return nf
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
-        } else {
-            fahrenheitValue = nil
-        }
+        print("ConversionViewController loaded its view")
         
+        updateCelsiusLabel()
     }
     
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
         textField.resignFirstResponder()
     }
     
@@ -64,18 +55,23 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn rage: NSRange,
-                   replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         let replacementTextHasDecimalSeparator = string.range(of: ".")
         
-        if existingTextHasDecimalSeparator != nil,
-            replacementTextHasDecimalSeparator != nil {
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
             return false
         } else {
             return true
+        }
+    }
+    
+    @IBAction func fahrenheitFieldEditingChanges(_ textField: UITextField) {
+        if let text = textField.text, let value = Double(text) {
+            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        } else {
+            fahrenheitValue = nil
         }
     }
 }
